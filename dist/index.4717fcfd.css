@@ -12262,6 +12262,10 @@ span {
   display: grid;
 }
 
+#card1 .steps__next {
+  align-content: end;
+}
+
 #card1 input {
   box-shadow: none;
   width: 100%;

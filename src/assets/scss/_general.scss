@@ -150,6 +150,10 @@ span {
   display: grid;
   z-index: 1;
 
+  .steps__next {
+    align-content: end;
+  }
+
   input {
     outline: none;
     padding: 0.75em 1em;
