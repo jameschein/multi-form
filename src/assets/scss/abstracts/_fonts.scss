@@ -1,0 +1,26 @@
+/* WEBFONTS */
+@font-face {
+  font-family: "UbuntuBold";
+  src: url("../fonts/Ubuntu-Bold.ttf") format("truetype");
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "UbuntuMedium";
+  src: url("../fonts/Ubuntu-Medium.ttf") format("truetype");
+  font-weight: 500;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "UbuntuRegular";
+  src: url("../fonts/Ubuntu-Regular.ttf") format("truetype");
+  font-weight: 700;
+  font-style: normal;
+}
+
+/* FONTS */
+$UbuntuReg: UbuntuRegular;
+$UbuntuMed: UbuntuMedium;
+$UbuntuBold: UbuntuBold;

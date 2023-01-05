@@ -1,0 +1,97 @@
+[type="checkbox"] {
+  visibility: visible;
+  position: absolute;
+}
+
+[type="checkbox"]:not(:checked) {
+  background-color: #cb22ed;
+  position: absolute;
+  left: 0;
+  opacity: 0.01;
+}
+
+[type="checkbox"]:not(:checked) + .steps__payment-option > .addon__option,
+[type="checkbox"]:checked + .steps__payment-option > .addon__option {
+  position: relative;
+  padding-left: 2.3em;
+  font-size: 1.05em;
+  line-height: 1.7;
+  cursor: pointer;
+}
+
+// /* checkbox aspect */
+[type="checkbox"]:not(:checked)
+  + .steps__payment-option
+  > .addon__option:before,
+[type="checkbox"]:checked + .steps__payment-option > .addon__option:before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 0.5em;
+  width: 1.8em;
+  height: 1.8em;
+  border-radius: 0.5em;
+  box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.1), 0 0 0 rgba(203, 34, 237, 0.2);
+  -webkit-transition: all 0.275s;
+  transition: all 0.275s;
+}
+
+// /* checked mark aspect */
+[type="checkbox"]:not(:checked) + .steps__payment-option > .addon__option:after,
+[type="checkbox"]:checked + .steps__payment-option > .addon__option:after {
+  content: "";
+  background-color: $purplishblue;
+  background-image: url(../images/icon-checkmark.svg);
+  background-size: 66%;
+  background-position: 50%;
+  background-repeat: no-repeat;
+  border-radius: 0.25em;
+
+  width: 1em;
+  height: 1em;
+  position: absolute;
+  top: 0.25em;
+  left: 0em;
+  font-size: 1.75em;
+  color: $white;
+  line-height: 0;
+  -webkit-transition: all 0.2s;
+  transition: all 0.2s;
+}
+
+// /* checked mark aspect changes */
+[type="checkbox"]:not(:checked)
+  + .steps__payment-option
+  > .addon__option:after {
+  opacity: 0;
+  -webkit-transform: scale(0) rotate(45deg);
+  transform: scale(0) rotate(45deg);
+}
+
+[type="checkbox"]:checked + .steps__payment-option > .addon__option:after {
+  opacity: 1;
+  -webkit-transform: scale(1) rotate(0);
+  transform: scale(1) rotate(0);
+}
+
+// /* Disabled checkbox */
+[type="checkbox"]:disabled:not(:checked)
+  + .steps__payment-option
+  > .addon__optionn:before,
+[type="checkbox"]:disabled:checked
+  + .steps__payment-option
+  > .addon__option:before {
+  box-shadow: none;
+  border-color: #bbb;
+  background-color: #e9e9e9;
+}
+
+[type="checkbox"]:disabled:checked
+  + .steps__payment-option
+  > .addon__option:after {
+  color: #777;
+}
+
+[type="checkbox"]:disabled + .steps__payment-option > .addon__option {
+  color: #aaa;
+}

@@ -1,0 +1,29 @@
+{
+  "name": "multi-form",
+  "version": "1.0.0",
+  "description": "Begin",
+  "main": "index.js",
+  "source": "src/index.html",
+  "scripts": {
+    "dev": "parcel",
+    "build": "parcel build"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/jameschein/multi-form.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/jameschein/multi-form/issues"
+  },
+  "homepage": "https://github.com/jameschein/multi-form#readme",
+  "devDependencies": {
+    "@parcel/transformer-sass": "^2.8.2",
+    "parcel": "^2.8.2"
+  },
+  "dependencies": {
+    "bootstrap": "^5.2.3"
+  }
+}

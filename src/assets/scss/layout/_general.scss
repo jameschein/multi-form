@@ -1,0 +1,465 @@
+* {
+  margin: 0;
+  padding: 0;
+  font-weight: normal;
+  box-sizing: border-box;
+  line-height: 1;
+}
+
+body {
+  background-image: url("../images/bg-sidebar-mobile.svg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  font-size: 100%;
+  color: $marineblue;
+  background-color: $magnolia;
+  font-family: $UbuntuReg;
+}
+
+p {
+  color: $coolgray;
+  line-height: 1.5;
+}
+
+h1 {
+  font-size: 1.5rem;
+  font-family: $UbuntuBold;
+  margin-top: 0;
+}
+
+h3 {
+  font-size: 1.125rem;
+  padding: 0;
+  display: inline-block;
+  font-family: $UbuntuMed;
+}
+
+span {
+  font-size: 0.9em;
+  display: block;
+  color: $coolgray;
+  font-family: $UbuntuReg;
+  padding-block: 0.5em;
+}
+
+.steps__sidebar {
+  text-transform: uppercase;
+  color: $white;
+  padding-block: 2em 0.5em;
+
+  label {
+    color: $marineblue;
+  }
+
+  .steps__list {
+    display: flex;
+    gap: 0em;
+    justify-content: space-around;
+    list-style: none;
+    padding: 0.25em 5em 0.25em;
+
+    #yourInfo a::before {
+      content: "1";
+    }
+    #selectPlan a::before {
+      content: "2";
+    }
+    #addOns a::before {
+      content: "3";
+    }
+    #summary a::before {
+      content: "4";
+    }
+
+    .step__option {
+      a {
+        display: block;
+        text-decoration: none;
+        color: $white;
+
+        &::before {
+          content: "#";
+          display: block;
+          background-color: transparent;
+          border: 1px solid white;
+          width: 16px;
+          height: 16px;
+          border-radius: 100%;
+          text-align: left;
+          padding: 1em 1.75em 2em 1.25em;
+          transition: all 200ms ease-in-out;
+        }
+
+        &:hover::before {
+          background-color: darken($pastelblue, 10);
+          transition: background-color 200ms ease-in-out;
+        }
+
+        &.step-selected::before {
+          background-color: $lightblue;
+          color: $marineblue;
+        }
+
+        span {
+          display: none;
+          font-family: $UbuntuReg;
+          font-size: 0.75rem;
+          color: $coolgray;
+        }
+
+        span ~ span {
+          font-family: $UbuntuMed;
+          font-size: 16px;
+          letter-spacing: 1px;
+          color: $white;
+        }
+      }
+    }
+  }
+}
+// END SIDEBAR
+
+// START CARDS
+.steps__cards {
+  position: relative;
+  width: 90%;
+  margin: 0 auto;
+}
+
+.steps__card {
+  display: grid;
+  gap: 0.5rem;
+  background-color: white;
+  position: absolute;
+  width: 100%;
+  padding: 1.5rem;
+  z-index: -1;
+  border-radius: 20px;
+}
+
+// PERSONAL DETAILS FORM
+#card1 {
+  z-index: -1;
+
+  input {
+    outline: none;
+    padding: 0.75em 1em;
+    margin-block: 0.25em 1em;
+    border-radius: 6px;
+    box-shadow: none;
+    border: 1px solid $lightgray;
+    width: 100%;
+    font-family: $UbuntuBold;
+    color: $coolgray;
+    display: block;
+
+    &:is(:hover, :focus) {
+      border: 1px solid $marineblue;
+    }
+
+    &.required:is(:hover, :focus) {
+      border: 1px solid $strawberryred;
+    }
+  }
+
+  label {
+    width: 100%;
+
+    &::before {
+      content: "";
+    }
+
+    &.required::before {
+      content: "This is a required field";
+      color: $strawberryred;
+      display: block;
+      text-align: right;
+      font-size: 1rem;
+      float: right;
+    }
+
+    &.required + input {
+      outline: none;
+      border: 1px solid $strawberryred;
+    }
+  }
+}
+
+#card2 {
+  z-index: 1;
+
+  .steps__yearly {
+    h3 {
+      font-size: 1em;
+    }
+    h3::after {
+      content: "2 months free";
+      font-size: 0.9em;
+    }
+  }
+
+  .steps__payment-option {
+    &::before {
+      content: "";
+      display: block;
+      width: 48px;
+      height: 48px;
+      border-radius: 100%;
+      margin-right: 0.5em;
+      float: left;
+      background-repeat: no-repeat;
+      background-size: cover;
+    }
+
+    &[data-icon="arcade"]::before {
+      background-image: url(../images/icon-arcade.svg);
+    }
+    &[data-icon="advanced"]::before {
+      background-image: url(../images/icon-advanced.svg);
+    }
+    &[data-icon="pro"]::before {
+      background-image: url(../images/icon-pro.svg);
+    }
+  }
+}
+
+.steps__payment-option {
+  width: 100%;
+  border: 1px solid $lightgray;
+  padding: 1.25em 1em;
+  border-radius: 8px;
+
+  &:is(:hover, :focus) {
+    border: 1px solid $purplishblue;
+  }
+}
+
+.steps__payment-options {
+  width: 100%;
+  display: grid;
+
+  .steps__period {
+    width: 100%;
+    background-color: $white;
+    display: grid;
+
+    label {
+      position: relative;
+      cursor: pointer;
+    }
+
+    input {
+      position: absolute;
+      z-index: 10;
+      visibility: hidden;
+    }
+
+    input:checked + .steps__payment-option {
+      background-color: $alabaster;
+      color: $marineblue;
+      border: 1px solid $purplishblue;
+    }
+
+    &.steps__monthly {
+      grid-area: 1/ 1/ 2/ 2;
+      z-index: 1;
+    }
+
+    &.steps__yearly {
+      grid-area: 1/ 1/ 2/ 2;
+      z-index: -1;
+
+      .steps__payment-option {
+        padding: 1em 1em 0.75em;
+      }
+    }
+  }
+}
+
+// MONTHLY YEARLY TOGGLE
+.steps__period-toggle {
+  display: grid;
+  grid-template-columns: 1fr auto auto 1fr;
+  width: 100%;
+  background-color: $magnolia;
+  padding: 1em;
+  font-size: 0.9em;
+  justify-content: center;
+  align-items: center;
+
+  .monthly {
+    text-align: right;
+    grid-area: 1/ 1/ 2 /3;
+    padding-right: 0.25em;
+    z-index: 2;
+    color: $coolgray;
+
+    input {
+      display: inline-block;
+      margin-left: 1em;
+      visibility: hidden;
+    }
+  }
+
+  .yearly {
+    text-align: left;
+    grid-area: 1/ 3/ 2 /5;
+    padding-left: 0.25em;
+    z-index: 2;
+    color: $coolgray;
+
+    input {
+      display: inline-block;
+      margin-right: 1em;
+      visibility: hidden;
+    }
+  }
+
+  .option-selected {
+    color: $marineblue;
+  }
+
+  .period-toggle-button {
+    background-color: $marineblue;
+    grid-area: 1/ 2/ 2 /4;
+    width: 2.5rem;
+    height: 1rem;
+    border-radius: 100px;
+    padding: 0.25em;
+    box-sizing: content-box;
+    z-index: 1;
+
+    .switch {
+      border-radius: 100%;
+      background-color: $white;
+      width: 1em;
+      height: 1em;
+
+      span {
+        text-indent: 999px;
+        overflow: hidden;
+        white-space: nowrap;
+      }
+    }
+  }
+}
+// END MONTHLY YEARLY TOGGLE
+
+// ADDONS
+#card3 {
+  .flex-group {
+    flex-direction: row;
+    align-items: center;
+    flex-wrap: nowrap;
+  }
+
+  .addon__option {
+    flex-basis: 80%;
+    padding-left: 3rem;
+    font-size: 0.9em;
+
+    .addon__name {
+      line-height: 1;
+    }
+
+    .addon__description {
+      line-height: 1;
+      font-size: 1em;
+      margin-bottom: 0;
+    }
+  }
+
+  .addon__price {
+    flex-basis: 20%;
+    color: $purplishblue;
+    margin-bottom: 0;
+  }
+}
+// END ADDONS
+
+// THANK YOU CARD
+#card5 {
+  text-align: center;
+
+  &::before {
+    content: "";
+    background-image: url("../images/icon-thank-you.svg");
+    background-size: cover;
+    background-repeat: no-repeat;
+    display: block;
+    width: 100px;
+    height: 100px;
+    margin: 0 auto;
+  }
+
+  h1 {
+    padding-top: 1em;
+  }
+}
+
+.steps__next {
+  width: 100%;
+  height: 80px;
+  background-color: #fff;
+  align-content: space-between;
+  padding: 1em;
+  display: flex;
+  position: fixed;
+  bottom: 0px;
+  left: 0;
+  justify-content: center;
+
+  .next-step {
+    background-color: $marineblue;
+    color: $white;
+    border: none;
+    padding: 1em 1.5em;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: all 250ms ease-in-out;
+
+    &:is(:hover, :focus) {
+      background-color: lighten($marineblue, 10);
+      transition: all 250ms ease-in-out;
+    }
+  }
+
+  .go-back {
+    cursor: pointer;
+    color: $coolgray;
+    border: none;
+    background-color: transparent;
+    padding-inline: 1em;
+    transition: all 250ms ease-in-out;
+
+    &:is(:hover, :focus) {
+      color: $marineblue;
+      transition: all 250ms ease-in-out;
+    }
+  }
+}
+
+.flex-group {
+  flex: 1;
+  flex-direction: column;
+}
+
+footer {
+  width: 100%;
+  height: 50px;
+  place-items: center;
+  display: grid;
+  padding-top: 0.5em;
+  position: fixed;
+  bottom: 0;
+}
+
+.attribution {
+  text-align: center;
+  font-size: 12px;
+}
+
+.attribution a {
+  color: $strawberryred;
+  text-decoration: none;
+}

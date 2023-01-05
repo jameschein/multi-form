@@ -1,0 +1,344 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- displays site properly based on user's device -->
+    <link rel="stylesheet" href="./assets/scss/main.scss" />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="./assets/images/favicon-32x32.png" />
+
+    <title>Frontend Mentor | Multi-step form</title>
+  </head>
+  <body>
+    <div class="wrap">
+      <main class="app">
+        <!-- Sidebar start -->
+
+        <aside class="steps__sidebar">
+          <ul class="steps__list">
+            <li class="step__option" id="yourInfo">
+              <a href="#" data-index="1" class="step-selected">
+                <p>
+                  <span>Step 1</span>
+                  <span>Your Info</span>
+                </p>
+              </a>
+            </li>
+
+            <li class="step__option" id="selectPlan">
+              <a href="#" data-index="2">
+                <p>
+                  <span>Step 2</span>
+                  <span>Select plan</span>
+                </p>
+              </a>
+            </li>
+
+            <li class="step__option" id="addOns">
+              <a href="#" data-index="3">
+                <p>
+                  <span>Step 3</span>
+                  <span>Add-ons</span>
+                </p>
+              </a>
+            </li>
+
+            <li class="step__option" id="summary">
+              <a href="#" data-index="4">
+                <p>
+                  <span>Step 4</span>
+                  <span>Summary</span>
+                </p>
+              </a>
+            </li>
+          </ul>
+        </aside>
+
+        <form name="multi-step-form">
+          <!-- Sidebar end -->
+          <section class="steps__cards">
+            <!-- Step 1 start -->
+            <div class="steps__card" id="card1">
+              <h1>Personal info</h1>
+              <p>Please provide your name, email address, and phone number.</p>
+              <div>
+                <label>Name</label>
+                <input placeholder="e.g. Stephen King" />
+              </div>
+              <div>
+                <label>Email Address</label>
+                <input placeholder="e.g. stephenking@lorem.com" />
+              </div>
+              <div>
+                <label class="required">Phone Number</label>
+                <input placeholder="e.g. +1 234 567 890" />
+              </div>
+
+              <div class="flex-group steps__next">
+                <button class="go-back">Go Back</button>
+                <button class="next-step">Next Step</button>
+              </div>
+            </div>
+            <!-- Step 1 end -->
+
+            <!-- Step 2 start -->
+            <div class="steps__card" id="card2">
+              <h1>Select your plan</h1>
+              <p>You have the option of monthly or yearly billing.</p>
+
+              <div class="steps__payment-options steps_plans">
+                <div class="flex-group steps__period plans steps__monthly">
+                  <label>
+                    <input name="period" value="arcade" type="radio" checked />
+                    <div class="steps__payment-option" data-icon="arcade">
+                      <h3>
+                        Arcade
+                        <span>$9/mo</span>
+                      </h3>
+                    </div>
+                  </label>
+
+                  <label>
+                    <input name="period" value="advanced" type="radio" />
+                    <div class="steps__payment-option" data-icon="advanced">
+                      <h3>
+                        Advanced
+                        <span>$12/mo</span>
+                      </h3>
+                    </div>
+                  </label>
+
+                  <label>
+                    <input name="period" value="pro" type="radio" />
+                    <div class="steps__payment-option" data-icon="pro">
+                      <h3>
+                        Pro
+                        <span>$15/mo</span>
+                      </h3>
+                    </div>
+                  </label>
+                </div>
+
+                <div class="flex-group steps__period plans steps__yearly">
+                  <label>
+                    <input name="period" value="arcadey" type="radio" />
+                    <div class="steps__payment-option" data-icon="arcade">
+                      <h3>
+                        Arcade
+                        <span>$90/yr</span>
+                      </h3>
+                    </div>
+                  </label>
+
+                  <label>
+                    <input name="period" value="advancedy" type="radio" />
+                    <div class="steps__payment-option" data-icon="advanced">
+                      <h3>
+                        Advanced
+                        <span>$120/yr</span>
+                      </h3>
+                    </div>
+                  </label>
+
+                  <label>
+                    <input name="period" value="proy" type="radio" />
+                    <div class="steps__payment-option" data-icon="pro">
+                      <h3>
+                        Pro
+                        <span>$150/yr</span>
+                      </h3>
+                    </div>
+                  </label>
+                </div>
+              </div>
+
+              <div class="steps__period-toggle corners">
+                <label class="monthly period option-selected">
+                  Monthly
+                  <input
+                    type="radio"
+                    name="periodtoggle"
+                    value="monthly"
+                    checked />
+                </label>
+
+                <div class="period-toggle-button">
+                  <div class="switch"><span>Switch</span></div>
+                </div>
+
+                <label class="yearly period">
+                  <input type="radio" name="periodtoggle" value="yearly" />
+                  Yearly
+                </label>
+              </div>
+
+              <div class="flex-group steps__next">
+                <button class="go-back">Go Back</button>
+                <button class="next-step">Next Step</button>
+              </div>
+            </div>
+
+            <!-- Step 2 end -->
+
+            <!-- Step 3 start -->
+            <div class="steps__card" id="card3">
+              <h1>Pick add-ons</h1>
+              <p>Add-ons help enhance your gaming experience.</p>
+
+              <div class="steps__payment-options steps__addons">
+                <div class="flex-group steps__period addons steps__monthly">
+                  <label class="online-service">
+                    <input
+                      name="period"
+                      value="online-service"
+                      type="checkbox" />
+                    <div class="steps__payment-option flex-group">
+                      <div class="addon__option">
+                        <h3 class="addon__name">Online service</h3>
+                        <p class="addon__description">
+                          Access to multiplayer games
+                        </p>
+                      </div>
+                      <p class="addon__price">+$1/mo</p>
+                    </div>
+                  </label>
+
+                  <label class="larger-storage">
+                    <input
+                      name="period"
+                      value="larger-storage"
+                      type="checkbox" />
+                    <div class="steps__payment-option flex-group">
+                      <div class="addon__option">
+                        <h3 class="addon__title">Larger storage</h3>
+                        <p class="addon__description">
+                          Extra 1TB of cloud save
+                        </p>
+                      </div>
+                      <p class="addon__price">+$2/mo</p>
+                    </div>
+                  </label>
+
+                  <label class="addon customisable-profile">
+                    <input
+                      name="period"
+                      value="customisable-profile"
+                      type="checkbox" />
+                    <div class="steps__payment-option flex-group">
+                      <div class="addon__option">
+                        <h3 class="addon__title">Customizable Profile</h3>
+                        <p class="addon__description">
+                          Custom theme on your profile
+                        </p>
+                      </div>
+                      <p class="addon__price">+$2/mo</p>
+                    </div>
+                  </label>
+                </div>
+
+                <div class="flex-group steps__period addons steps__yearly">
+                  <label class="online-service">
+                    <input
+                      name="period"
+                      value="online-service"
+                      type="checkbox" />
+                    <div class="steps__payment-option flex-group">
+                      <div class="addon__option">
+                        <h3 class="addon__name">Online service</h3>
+                        <p class="addon__description">
+                          Access to multiplayer games
+                        </p>
+                      </div>
+                      <p class="addon__price">+$10/yr</p>
+                    </div>
+                  </label>
+
+                  <label class="larger-storage">
+                    <input
+                      name="period"
+                      value="larger-storage"
+                      type="checkbox" />
+                    <div class="steps__payment-option flex-group">
+                      <div class="addon__option">
+                        <h3 class="addon__title">Larger storage</h3>
+                        <p class="addon__description">
+                          Extra 1TB of cloud save
+                        </p>
+                      </div>
+                      <p class="addon__price">+$20/yr</p>
+                    </div>
+                  </label>
+
+                  <label class="addon customisable-profile">
+                    <input
+                      name="period"
+                      value="customisable-profile"
+                      type="checkbox" />
+                    <div class="steps__payment-option flex-group">
+                      <div class="addon__option">
+                        <h3 class="addon__title">Customizable Profile</h3>
+                        <p class="addon__description">
+                          Custom theme on your profile
+                        </p>
+                      </div>
+                      <p class="addon__price">+$20/yr</p>
+                    </div>
+                  </label>
+                </div>
+              </div>
+
+              <div class="flex-group steps__next">
+                <button class="go-back">Go Back</button>
+                <button class="next-step">Next Step</button>
+              </div>
+            </div>
+            <!-- Step 3 end -->
+
+            <!-- Step 4 start -->
+            <div class="steps__card" id="card4">
+              <h1>Finishing up</h1>
+              <p>Double-check everything looks OK before confirming.</p>
+              <!-- Dynamically add subscription and add-on selections here -->
+              <p>Total (per month/year)</p>
+              <div class="flex-group steps__next steps__confirmation">
+                <button class="go-back">Go Back</button>
+                <input type="submit" value="confirm" class="confirm" />
+              </div>
+            </div>
+            <!-- Step 4 end -->
+
+            <!-- Thankyou card start -->
+            <div class="steps__card" id="card5">
+              <h1>Thank you!</h1>
+              <p>
+                Thanks for confirming your subscription! We hope you have fun
+                using our platform. If you ever need support, please feel free
+                to email us at support@loremgaming.com.
+              </p>
+            </div>
+
+            <!-- Step 5 end -->
+          </section>
+        </form>
+        <!-- FORM ends here-->
+      </main>
+
+      <footer>
+        <div class="attribution">
+          Challenge by
+          <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">
+            Frontend Mentor
+          </a>
+          . Coded by
+          <a href="https://schein.co.uk">Schein</a>
+          .
+        </div>
+      </footer>
+    </div>
+    <script type="module" src="./assets/js/script.js" defer></script>
+  </body>
+</html>
