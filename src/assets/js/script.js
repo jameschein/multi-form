@@ -22,7 +22,7 @@ document.addEventListener("DOMContentLoaded", () => {
     })
   })
 
-  // switch between month and year paymewnt options
+  // switch between month and year payment options
   // get hold of the selectors
 
   const periods = document.querySelectorAll(".period input")
@@ -53,4 +53,6 @@ document.addEventListener("DOMContentLoaded", () => {
       paymentsAddons[counter].style.zIndex = 1
     })
   })
+
+  // Dynamically Create CARD FOUR Table
 })

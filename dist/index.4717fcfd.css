@@ -12474,7 +12474,7 @@ span {
   line-height: 1;
 }
 
-#card3 .addon__price {
+.price {
   color: #473dff;
   flex-basis: 20%;
   margin-bottom: 0;
@@ -12543,6 +12543,39 @@ span {
 .flex-group {
   flex-direction: column;
   flex: 1;
+}
+
+.steps__summary {
+  width: 100%;
+  background-color: #f4f8ff;
+  border-radius: 10px;
+  gap: 1em;
+  padding: 1.5rem 1.5em 0;
+  display: grid;
+}
+
+.steps__summary .summary__plan {
+  border-bottom: 1px solid #9699ab;
+}
+
+.steps__summary .summary__change-link {
+  color: #9699ab;
+  background-color: #0000;
+  border: none;
+  text-decoration: underline;
+}
+
+.steps__summary .summary__price {
+  color: #02295a;
+}
+
+.steps__summary .summary__price:is(.plan, .total) {
+  font-family: UbuntuBold;
+}
+
+.steps__summary .flex-group {
+  flex-direction: row;
+  justify-content: space-between;
 }
 
 footer {

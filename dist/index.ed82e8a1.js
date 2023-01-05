@@ -551,7 +551,7 @@ document.addEventListener("DOMContentLoaded", ()=>{
             } else return false;
         });
     });
-    // switch between month and year paymewnt options
+    // switch between month and year payment options
     // get hold of the selectors
     const periods = document.querySelectorAll(".period input");
     const paymentsPlans = document.querySelectorAll(".plans");
@@ -574,6 +574,7 @@ document.addEventListener("DOMContentLoaded", ()=>{
             paymentsAddons[counter].style.zIndex = 1;
         });
     });
+// Dynamically Create CARD FOUR Table
 });
 
 },{}]},["8rlDF","cyUIL"], "cyUIL", "parcelRequiref4c7")
