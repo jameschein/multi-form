@@ -12115,6 +12115,7 @@ textarea.form-control-lg {
   box-sizing: border-box;
   margin: 0;
   padding: 0;
+  font-size: 1em;
   font-weight: normal;
   line-height: 1;
 }
@@ -12124,9 +12125,9 @@ body {
   background-color: #f0f6ff;
   background-image: url("bg-sidebar-mobile.e54d0b12.svg");
   background-repeat: no-repeat;
-  background-size: cover;
+  background-size: contain;
   font-family: UbuntuRegular;
-  font-size: 100%;
+  font-size: 84%;
 }
 
 p {
@@ -12141,6 +12142,7 @@ h1, .h1 {
 }
 
 h3, .h3 {
+  margin-top: 0;
   padding: 0;
   font-family: UbuntuMedium;
   font-size: 1.125rem;
@@ -12153,6 +12155,10 @@ span {
   font-family: UbuntuRegular;
   font-size: .9em;
   display: block;
+}
+
+.app {
+  display: grid;
 }
 
 .steps__sidebar {
@@ -12235,22 +12241,25 @@ span {
 .steps__cards {
   width: 90%;
   margin: 0 auto;
+  display: grid;
   position: relative;
 }
 
 .steps__card {
+  grid-area: 1 / 1 / 2 / 2;
+  grid-template-rows: auto 1fr;
+  grid-auto-flow: dense;
   width: 100%;
   z-index: -1;
   background-color: #fff;
   border-radius: 20px;
-  gap: .5rem;
   padding: 1.5rem;
-  display: grid;
-  position: absolute;
+  display: none;
 }
 
 #card1 {
-  z-index: -1;
+  z-index: 1;
+  display: grid;
 }
 
 #card1 input {
@@ -12297,7 +12306,7 @@ span {
 }
 
 #card2 {
-  z-index: 1;
+  z-index: -1;
 }
 
 #card2 .steps__yearly h3, #card2 .steps__yearly .h3 {
@@ -12337,7 +12346,7 @@ span {
   width: 100%;
   border: 1px solid #d6d9e6;
   border-radius: 8px;
-  padding: 1.25em 1em;
+  padding: 1.25em 1em .25em;
 }
 
 .steps__payment-option:is(:hover, :focus) {
@@ -12453,15 +12462,19 @@ span {
   overflow: hidden;
 }
 
-#card3 .flex-group {
+#card3 .steps__addons .flex-group {
   flex-flow: row;
   align-items: center;
 }
 
 #card3 .addon__option {
   flex-basis: 80%;
-  padding-left: 3rem;
-  font-size: .9em;
+  padding-left: 2.5rem;
+  font-size: .8em;
+}
+
+#card3 .addon__option h3, #card3 .addon__option .h3 {
+  font-size: 1rem;
 }
 
 #card3 .addon__option .addon__name {
@@ -12481,6 +12494,7 @@ span {
 }
 
 #card5 {
+  z-index: -1;
   text-align: center;
 }
 
@@ -12511,9 +12525,10 @@ span {
   left: 0;
 }
 
-.steps__next .next-step {
+.steps__next :is(.next-step, .confirm) {
   color: #fff;
   cursor: pointer;
+  min-width: 120px;
   background-color: #02295a;
   border: none;
   border-radius: 6px;
@@ -12521,7 +12536,7 @@ span {
   transition: all .25s ease-in-out;
 }
 
-.steps__next .next-step:is(:hover, :focus) {
+.steps__next :is(.next-step, .confirm):is(:hover, :focus) {
   background-color: #03418c;
   transition: all .25s ease-in-out;
 }
@@ -12603,10 +12618,6 @@ footer {
     background-image: none;
   }
 
-  h3, .h3 {
-    padding: 4em 0 0;
-  }
-
   .wrap {
     width: 100%;
     place-items: center;
@@ -12634,13 +12645,12 @@ footer {
     background-image: url("bg-sidebar-desktop.e95610ce.svg");
     background-repeat: no-repeat;
     background-size: 100%;
-    padding-bottom: 17em;
+    grid-area: 1 / 1 / 3 / 2;
     padding-left: 0;
   }
 
   .steps__sidebar .steps__list {
     flex-direction: column;
-    gap: 1em;
     padding-left: 3em;
   }
 
@@ -12671,6 +12681,11 @@ footer {
     position: relative;
   }
 
+  .steps__card {
+    grid-template-rows: 12vh 48vh 20vh;
+    display: grid;
+  }
+
   #card2 .steps__payment-options .steps__period {
     width: 100%;
     background-color: #fff;
@@ -12680,6 +12695,10 @@ footer {
 
   #card2 .steps__payment-options .steps__period .steps__payment-option:before {
     float: none;
+  }
+
+  #card2 h3, #card2 .h3 {
+    padding: 4em 0 0;
   }
 
   footer {

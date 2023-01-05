@@ -10,11 +10,13 @@ document.addEventListener("DOMContentLoaded", () => {
       for (let i = 0; i < cards.length - 1; i++) {
         steps[i].classList.remove("step-selected")
         cards[i].style.zIndex = -1
+        cards[i].style.display = "none"
       }
 
       let currentCard = step.getAttribute("data-index") - 1
       if (currentCard != undefined) {
         cards[currentCard].style.zIndex = 1
+        cards[currentCard].style.display = "grid"
         step.classList.add("step-selected")
       } else {
         return false

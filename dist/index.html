@@ -54,25 +54,31 @@
             </li>
           </ul>
         </aside>
-
+        <!-- Sidebar end -->
         <form name="multi-step-form">
-          <!-- Sidebar end -->
           <section class="steps__cards">
             <!-- Step 1 start -->
             <div class="steps__card" id="card1">
-              <h1>Personal info</h1>
-              <p>Please provide your name, email address, and phone number.</p>
-              <div>
-                <label>Name</label>
-                <input placeholder="e.g. Stephen King">
-              </div>
-              <div>
-                <label>Email Address</label>
-                <input placeholder="e.g. stephenking@lorem.com">
-              </div>
-              <div>
-                <label class="required">Phone Number</label>
-                <input placeholder="e.g. +1 234 567 890">
+              <hgroup class="card__header">
+                <h1>Personal info</h1>
+                <p>
+                  Please provide your name, email address, and phone number.
+                </p>
+              </hgroup>
+
+              <div class="steps__personal-info">
+                <div>
+                  <label>Name</label>
+                  <input placeholder="e.g. Stephen King">
+                </div>
+                <div>
+                  <label>Email Address</label>
+                  <input placeholder="e.g. stephenking@lorem.com">
+                </div>
+                <div>
+                  <label class="required">Phone Number</label>
+                  <input placeholder="e.g. +1 234 567 890">
+                </div>
               </div>
 
               <div class="flex-group steps__next">
@@ -80,14 +86,15 @@
                 <button class="next-step">Next Step</button>
               </div>
             </div>
-            <!-- Step 1 end -->
 
             <!-- Step 2 start -->
             <div class="steps__card" id="card2">
-              <h1>Select your plan</h1>
-              <p>You have the option of monthly or yearly billing.</p>
+              <hgroup class="card__header">
+                <h1>Select your plan</h1>
+                <p>You have the option of monthly or yearly billing.</p>
+              </hgroup>
 
-              <div class="steps__payment-options steps_plans">
+              <div class="steps__payment-options steps__plans">
                 <div class="flex-group steps__period plans steps__monthly">
                   <label>
                     <input name="period" value="arcade" type="radio" checked="">
@@ -119,6 +126,7 @@
                     </div>
                   </label>
                 </div>
+                <!-- END MONTHLY -->
 
                 <div class="flex-group steps__period plans steps__yearly">
                   <label>
@@ -151,22 +159,24 @@
                     </div>
                   </label>
                 </div>
-              </div>
+                <!-- END MONTHLY -->
 
-              <div class="steps__period-toggle corners">
-                <label class="monthly period option-selected">
-                  Monthly
-                  <input type="radio" name="periodtoggle" value="monthly" checked="">
-                </label>
+                <!-- PERIOD SWITCHER-->
+                <div class="steps__period-toggle corners">
+                  <label class="monthly period option-selected">
+                    Monthly
+                    <input type="radio" name="periodtoggle" value="monthly" checked="">
+                  </label>
 
-                <div class="period-toggle-button">
-                  <div class="switch"><span>Switch</span></div>
+                  <div class="period-toggle-button">
+                    <div class="switch"><span>Switch</span></div>
+                  </div>
+
+                  <label class="yearly period">
+                    <input type="radio" name="periodtoggle" value="yearly">
+                    Yearly
+                  </label>
                 </div>
-
-                <label class="yearly period">
-                  <input type="radio" name="periodtoggle" value="yearly">
-                  Yearly
-                </label>
               </div>
 
               <div class="flex-group steps__next">
@@ -175,12 +185,12 @@
               </div>
             </div>
 
-            <!-- Step 2 end -->
-
             <!-- Step 3 start -->
             <div class="steps__card" id="card3">
-              <h1>Pick add-ons</h1>
-              <p>Add-ons help enhance your gaming experience.</p>
+              <hgroup class="card__header">
+                <h1>Pick add-ons</h1>
+                <p>Add-ons help enhance your gaming experience.</p>
+              </hgroup>
 
               <div class="steps__payment-options steps__addons">
                 <div class="flex-group steps__period addons steps__monthly">
@@ -271,14 +281,16 @@
                 <button class="next-step">Next Step</button>
               </div>
             </div>
-            <!-- Step 3 end -->
 
             <!-- Step 4 start -->
             <div class="steps__card" id="card4">
-              <h1>Finishing up</h1>
-              <p>Double-check everything looks OK before confirming.</p>
+              <hgroup class="card__header">
+                <h1>Finishing up</h1>
+                <p>Double-check everything looks OK before confirming.</p>
+              </hgroup>
+
               <div class="steps__summary summary">
-                <!-- Dynamically add subscription and add-on selections here -->
+                <!-- Dynamically add subscription, add-on selections here -->
                 <div class="summary__plan flex-group">
                   <hgroup class="summary__plan-group">
                     <h3 class="summary__plan-name">Arcade(Monthly)</h3>
@@ -301,28 +313,31 @@
                   <p>Total (per month/year)</p>
                   <p class="summary__price total">+$12/mo</p>
                 </div>
+                <!-- END DYNAMIC CONTENT -->
               </div>
 
-              <div class="flex-group steps__next steps__confirmation">
+              <div class="flex-group steps__next">
                 <button class="go-back">Go Back</button>
-                <input type="submit" value="confirm" class="confirm">
+                <input type="submit" value="Confirm" class="confirm">
               </div>
             </div>
-            <!-- Step 4 end -->
 
             <!-- Thankyou card start -->
             <div class="steps__card" id="card5">
-              <h1>Thank you!</h1>
-              <p>
-                Thanks for confirming your subscription! We hope you have fun
-                using our platform. If you ever need support, please feel free
-                to email us at support@loremgaming.com.
-              </p>
+              <hgroup class="card__header">
+                <h1>Thank you!</h1>
+              </hgroup>
+              <div>
+                <p>
+                  Thanks for confirming your subscription! We hope you have fun
+                  using our platform. If you ever need support, please feel free
+                  to email us at support@loremgaming.com.
+                </p>
+              </div>
             </div>
-
-            <!-- Step 5 end -->
           </section>
         </form>
+
         <!-- FORM ends here-->
       </main>
 
@@ -338,6 +353,8 @@
         </div>
       </footer>
     </div>
+    <!-- END WRAP -->
+
     <script src="/index.ed82e8a1.js" defer=""></script>
   </body>
 </html>
